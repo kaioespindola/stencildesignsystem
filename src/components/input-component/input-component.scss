@@ -1,11 +1,6 @@
-:host {
-  display: block;
-}
-
-.ps-input {
-  display: block;
-
-  &__label {
+input-component {
+  
+  label {
     font-size: 13px;
     margin-top: 11px;
     margin-left: 9px;
@@ -24,7 +19,10 @@
 
     &:focus {
       background-color: $theme-main-blue-light;
-      border: 1px $theme-main-blue-light solid;
+      border-top: 1px $theme-main-blue-light solid;
+      border-left: 1px $theme-main-blue-light solid;
+      border-right: 1px $theme-main-blue-light solid;
+      border-bottom: 2px $theme-main-blue solid;
       outline: none;
     }
   }

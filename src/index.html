@@ -13,8 +13,13 @@
         margin: 0 auto;
         max-width: 900px;
       }
+      .componentes {
+        display: flex;
+        margin-bottom: 45px;
+      }
       .exemplo-componente {
         max-width: 200px;
+        margin-right: 50px;
       }
     </style>
   </head>
@@ -23,12 +28,35 @@
 
       <h1>Lista de Componentes</h1>
       <h3>Input</h3>
-      <div class="exemplo-componente">
-        <input-component label="Usuário"></input-component>
+      <div class="componentes">
+        <div class="exemplo-componente">
+          <input-component label="Usuário"></input-component>
+        </div>
+        <div class="exemplo-componente">
+          <input-component label="Desabilitado" disabled="true"></input-component>
+        </div>
+      </div>
+
+      <h3>Checkbox</h3>
+      <div class="componentes">
+        <div class="exemplo-componente">
+          <button-component></input-component>
+        </div>
+        <div class="exemplo-componente">
+          <button-component></input-component>
+        </div>
       </div>
 
       <h3>Buttons</h3>
-      
+      <div class="componentes">
+        <div class="exemplo-componente">
+          <button-component></input-component>
+        </div>
+        <div class="exemplo-componente">
+          <button-component></input-component>
+        </div>
+      </div>
+
     </div>
   </body>
 </html>

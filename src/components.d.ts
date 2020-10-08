@@ -6,7 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface ButtonComponent {
+    }
     interface InputComponent {
+        "disabled": boolean;
         "label": string;
     }
     interface MyComponent {
@@ -25,6 +28,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLButtonComponentElement extends Components.ButtonComponent, HTMLStencilElement {
+    }
+    var HTMLButtonComponentElement: {
+        prototype: HTMLButtonComponentElement;
+        new (): HTMLButtonComponentElement;
+    };
     interface HTMLInputComponentElement extends Components.InputComponent, HTMLStencilElement {
     }
     var HTMLInputComponentElement: {
@@ -38,12 +47,16 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "button-component": HTMLButtonComponentElement;
         "input-component": HTMLInputComponentElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface ButtonComponent {
+    }
     interface InputComponent {
+        "disabled"?: boolean;
         "label"?: string;
     }
     interface MyComponent {
@@ -61,6 +74,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "button-component": ButtonComponent;
         "input-component": InputComponent;
         "my-component": MyComponent;
     }
@@ -69,6 +83,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "button-component": LocalJSX.ButtonComponent & JSXBase.HTMLAttributes<HTMLButtonComponentElement>;
             "input-component": LocalJSX.InputComponent & JSXBase.HTMLAttributes<HTMLInputComponentElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }

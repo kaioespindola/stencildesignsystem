@@ -2,19 +2,13 @@ import { Component, Host, h, State, Prop } from '@stencil/core';
 
 @Component({
   tag: 'input-component',
-  styleUrl: 'input-component.scss',
-  shadow: true,
+  styleUrl: 'input-component.scss'
 })
 export class InputComponent {
 
   @State() value: string;
   @Prop() label: string = 'Label';
-
-  handleSubmit(e) {
-    e.preventDefault()
-    console.log(this.value);
-    // send data to our backend
-  }
+  @Prop({ mutable: true }) disabled: boolean = false;
 
   handleChange(event) {
     this.value = event.target.value;
@@ -24,10 +18,8 @@ export class InputComponent {
   render() {
     return (
       <Host>
-        <div class="ps-input">
-          <label class="ps-input__label">{this.label}</label>
-          <input type="text" value={this.value} onInput={(event) => this.handleChange(event)}></input>
-        </div>
+        <label>{this.label}</label>
+        <input type="text" disabled={this.disabled} value={this.value} onFocus={() => this.handleChange(event)} onInput={(event) => this.handleChange(event)}></input>
       </Host>
     );
   }
