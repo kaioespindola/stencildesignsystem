@@ -1,8 +1,16 @@
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'portoguidestencil',
-  globalStyle: 'src/global/global.css',
+  globalStyle: 'src/global/global.scss',
+  plugins: [
+    sass({
+      injectGlobalPaths: [
+        'src/global/global.scss'
+      ]
+    })
+  ],
   outputTargets: [
     {
       type: 'dist',

@@ -8,10 +8,27 @@
     <script type="module" src="/build/portoguidestencil.esm.js"></script>
     <script nomodule src="/build/portoguidestencil.js"></script>
     <link rel="stylesheet" href="/build/portoguidestencil.css">
+    <style>
+      .container-demo {
+        margin: 0 auto;
+        max-width: 900px;
+      }
+      .exemplo-componente {
+        max-width: 200px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Lista de Componentes</h1>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-    <input-component></input-component>
+    <div class="container-demo">
+
+      <h1>Lista de Componentes</h1>
+      <h3>Input</h3>
+      <div class="exemplo-componente">
+        <input-component label="Usuário"></input-component>
+      </div>
+
+      <h3>Buttons</h3>
+      
+    </div>
   </body>
 </html>

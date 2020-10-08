@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+$theme-main-dark: #707070;
+$theme-main-grey: #ACAFB0;
+$theme-main-blue: #45B4F9;
+$theme-main-blue-light: #F3FAFF;
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: 900;
+}
