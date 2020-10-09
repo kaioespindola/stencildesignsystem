@@ -7,24 +7,23 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface ButtonComponent {
+        "label": string;
+        "type": string;
+    }
+    interface CardComponent {
+        "cardtitle": string;
+    }
+    interface CheckboxComponent {
+        "checked": boolean;
+        "disabled": boolean;
+        "label": string;
+    }
+    interface HeaderComponent {
+        "logo": string;
     }
     interface InputComponent {
         "disabled": boolean;
         "label": string;
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
     }
 }
 declare global {
@@ -34,49 +33,64 @@ declare global {
         prototype: HTMLButtonComponentElement;
         new (): HTMLButtonComponentElement;
     };
+    interface HTMLCardComponentElement extends Components.CardComponent, HTMLStencilElement {
+    }
+    var HTMLCardComponentElement: {
+        prototype: HTMLCardComponentElement;
+        new (): HTMLCardComponentElement;
+    };
+    interface HTMLCheckboxComponentElement extends Components.CheckboxComponent, HTMLStencilElement {
+    }
+    var HTMLCheckboxComponentElement: {
+        prototype: HTMLCheckboxComponentElement;
+        new (): HTMLCheckboxComponentElement;
+    };
+    interface HTMLHeaderComponentElement extends Components.HeaderComponent, HTMLStencilElement {
+    }
+    var HTMLHeaderComponentElement: {
+        prototype: HTMLHeaderComponentElement;
+        new (): HTMLHeaderComponentElement;
+    };
     interface HTMLInputComponentElement extends Components.InputComponent, HTMLStencilElement {
     }
     var HTMLInputComponentElement: {
         prototype: HTMLInputComponentElement;
         new (): HTMLInputComponentElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLElementTagNameMap {
         "button-component": HTMLButtonComponentElement;
+        "card-component": HTMLCardComponentElement;
+        "checkbox-component": HTMLCheckboxComponentElement;
+        "header-component": HTMLHeaderComponentElement;
         "input-component": HTMLInputComponentElement;
-        "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
     interface ButtonComponent {
+        "label"?: string;
+        "type"?: string;
+    }
+    interface CardComponent {
+        "cardtitle"?: string;
+    }
+    interface CheckboxComponent {
+        "checked"?: boolean;
+        "disabled"?: boolean;
+        "label"?: string;
+    }
+    interface HeaderComponent {
+        "logo"?: string;
     }
     interface InputComponent {
         "disabled"?: boolean;
         "label"?: string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface IntrinsicElements {
         "button-component": ButtonComponent;
+        "card-component": CardComponent;
+        "checkbox-component": CheckboxComponent;
+        "header-component": HeaderComponent;
         "input-component": InputComponent;
-        "my-component": MyComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -84,8 +98,10 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "button-component": LocalJSX.ButtonComponent & JSXBase.HTMLAttributes<HTMLButtonComponentElement>;
+            "card-component": LocalJSX.CardComponent & JSXBase.HTMLAttributes<HTMLCardComponentElement>;
+            "checkbox-component": LocalJSX.CheckboxComponent & JSXBase.HTMLAttributes<HTMLCheckboxComponentElement>;
+            "header-component": LocalJSX.HeaderComponent & JSXBase.HTMLAttributes<HTMLHeaderComponentElement>;
             "input-component": LocalJSX.InputComponent & JSXBase.HTMLAttributes<HTMLInputComponentElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
 }

@@ -25,5 +25,9 @@ input-component {
       border-bottom: 2px $theme-main-blue solid;
       outline: none;
     }
+
+    &:disabled {
+      background-color: $theme-main-grey-light;
+    }
   }
 }

@@ -18,8 +18,8 @@
         margin-bottom: 45px;
       }
       .exemplo-componente {
-        max-width: 200px;
-        margin-right: 50px;
+        width: 200px;
+        margin-right: 100px;
       }
     </style>
   </head>
@@ -27,6 +27,7 @@
     <div class="container-demo">
 
       <h1>Lista de Componentes</h1>
+
       <h3>Input</h3>
       <div class="componentes">
         <div class="exemplo-componente">
@@ -40,22 +41,42 @@
       <h3>Checkbox</h3>
       <div class="componentes">
         <div class="exemplo-componente">
-          <button-component></input-component>
+          <checkbox-component checked="true"></checkbox-component>
         </div>
         <div class="exemplo-componente">
-          <button-component></input-component>
+          <checkbox-component checked="false"></checkbox-component>
+        </div>
+        <div class="exemplo-componente">
+          <checkbox-component checked="false" disabled="true" label="Desabilitado"></checkbox-component>
         </div>
       </div>
 
       <h3>Buttons</h3>
       <div class="componentes">
         <div class="exemplo-componente">
-          <button-component></input-component>
+          <button-component type="primary" label="Botão Primário"></input-component>
         </div>
         <div class="exemplo-componente">
-          <button-component></input-component>
+          <button-component type="secondary" label="Botão Secundário"></input-component>
         </div>
       </div>
+
+      <h3>Card</h3>
+      <div class="componentes">
+        <div class="exemplo-componente">
+          <card-component cardtitle="Título 1">
+            Conteúdo do Card
+          </card-component>
+        </div>
+        <div class="exemplo-componente">
+          <card-component cardtitle="Título 2">
+            Conteúdo do Card 2
+          </card-component>
+        </div>
+      </div>
+
+      <h3>Header</h3>
+      <header-component logo="http://guide.parati.ag/v.1.10/styles-core/logo/1.10/portoseguro--positivo.svg"></header-component>
 
     </div>
   </body>

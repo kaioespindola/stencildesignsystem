@@ -1,3 +1,29 @@
-:host {
-  display: block;
+button-component {
+  .button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+  }
+
+  .primary {
+    background-color: #009BF8;
+    color: white;
+    &:hover {
+      background-color: $theme-main-blue-darker;
+    }
+  }
+
+  .secondary {
+    border: 1px solid #009BF8;
+    color: #009BF8;
+    &:hover {
+      background-color: $theme-main-grey-light;
+    }
+  }
 }
